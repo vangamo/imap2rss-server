@@ -1,11 +1,8 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-apache
 
-RUN apk update && apk add --no-cache openssl-dev imap-dev
-RUN docker-php-ext-configure imap --with-imap --with-imap-ssl \
+RUN apt-get update && apt-get install -y libc-client-dev libkrb5-dev && rm -r /var/lib/apt/lists/*
+RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos \
     && docker-php-ext-install imap
-
-# Remove apk cache
-RUN rm -rf /var/cache/apk/*
 
 COPY ./src /var/www/html
 WORKDIR /var/www/html
