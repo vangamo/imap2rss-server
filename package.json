@@ -1,0 +1,30 @@
+{
+  "name": "mail2rss-server",
+  "version": "0.0.1",
+  "description": "RSS feed server that generates posts from unread emails from an email account.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch --watch-path=src src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vangamo/imap2rss-server.git"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "rss",
+    "atom",
+    "feed",
+    "imap",
+    "email"
+  ],
+  "author": "VanGamo <https://github.com/vangamo>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vangamo/imap2rss-server/issues"
+  },
+  "homepage": "https://github.com/vangamo/imap2rss-server#readme"
+}
