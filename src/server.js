@@ -10,7 +10,8 @@ const server = express();
 server.use(cors());
 
 server.get('/', (req, res) => {
-  res.send('Ok');
+  res.set('content-type', 'text/html');
+  res.status(200).send('Ok');
 });
 
 module.exports=server;
