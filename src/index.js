@@ -1,7 +1,6 @@
 'use strict';
 
-const express = require('express');
-const cors = require('cors');
+const server = require('./server');
 
 // Get and check env vars.
 
@@ -13,12 +12,7 @@ const SERVER_HOST =
     ? `http://${SERVER_HOSTNAME}:${SERVER_PORT}`
     : `https://${SERVER_HOSTNAME}`;
 
-// Create server instance
-const server = express();
-
-// Server config
-server.use(cors());
-
+// Start server
 
 server.listen(SERVER_PORT, () => {
   console.log(`Server listening at <${SERVER_HOST}>.`);
